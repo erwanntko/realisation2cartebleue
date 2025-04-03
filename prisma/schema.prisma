@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String     @id @default(uuid())
+  username    String  @unique
+  password    String
+  firstName   String
+  lastName    String
+  address     String
+  phoneNumber String
+  postalCode  String
+  isSalor     Boolean @default(false)
+  isAdmin     Boolean @default(false)
+  Panier      Panier[]  
+  User        CatalogueVoiture[]
+}
+
+model CatalogueVoiture {
+  id            String     @id @default(uuid())
+  prix          Float?
+  modele        String
+  marque        String
+  imgVoiture    String?
+  kilometrage   Int?
+  annee         Int?
+  carburant     String?
+  Transmission  String?
+  Puissance     Int?
+  byUserId      String     
+  user User @relation(fields: [byUserId], references: [id], onDelete: Cascade)
+  Panier        Panier[]
+}
+
+
+model Panier {
+  id         String           @id @default(uuid())
+  userId     String
+  voitureId  String
+  user       User           @relation(fields: [userId], references: [id])
+  voiture    CatalogueVoiture @relation(fields: [voitureId], references: [id])
+  
+  @@unique([userId, voitureId])
+}

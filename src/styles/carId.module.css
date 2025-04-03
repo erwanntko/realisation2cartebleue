@@ -1,0 +1,173 @@
+.carDetailContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+}
+
+.carHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.5rem;
+}
+
+.carTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.carLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.carImageContainer {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* Réduction de la hauteur du conteneur */
+  max-height: 320px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carImage {
+  width: 100%;
+  height: auto; /* Auto au lieu de 100% pour respecter les proportions */
+  max-height: 100%; /* Limite la hauteur à celle du conteneur */
+  object-fit: contain; /* Changed from cover to contain to avoid zooming */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.carImage:hover {
+  transform: scale(1.02); /* Réduit l'effet de zoom au survol */
+}
+
+.carSpecs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.carSpecItem {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.carSpecItemAlt {
+  background-color: #17da99;
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.carSpecItemAlt:hover {
+  background-color: #11c98b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.carSpecItem:hover {
+  background-color: #f0f2f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.specLabel {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.specValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.specValueAlt {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-left: 32%;
+}
+
+.priceHighlight {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #17da99;
+}
+
+.addToCartBtn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-family: 'Poppins, sans-serif';
+  font-size: 18px;
+}
+
+.notFound {
+  max-width: 800px;
+  margin: 5rem auto;
+  text-align: center;
+  padding: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.notFound h2 {
+  font-size: 2rem;
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+.notFound p {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+/* 🎯 Style responsive */
+@media (min-width: 768px) {
+  .carLayout {
+      grid-template-columns: 1fr 1fr;
+  }
+  
+  .carImageContainer {
+      max-height: 380px;
+      margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .carTitle {
+      font-size: 2rem;
+  }
+  
+  .carSpecs {
+      grid-template-columns: 1fr;
+  }
+  
+  .carImageContainer {
+      max-height: 250px;
+  }
+}

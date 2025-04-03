@@ -1,0 +1,115 @@
+/* styles/panier.module.css */
+
+.panier {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 600;
+}
+
+.resume {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  position: relative;
+}
+
+.reservationDetails {
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+.reservationDetails p {
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.reservationDetails p:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.reservationDetails p::after {
+  content: "→";
+  color: #17da99;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.reservationDetails p:hover::after {
+  opacity: 1;
+}
+
+.totalPrice {
+  font-size: 22px !important;
+  background-color: #f0f8ff !important;
+  border-left: 4px solid #17da99;
+  padding: 20px !important;
+  margin-top: 30px !important;
+  text-align: right;
+}
+
+.purchaseCart {
+  background-color: #17da99;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(23, 218, 153, 0.3);
+  display: block;
+  margin: 20px auto 0;
+  width: 80%;
+}
+
+.purchaseCart:hover {
+  background-color: #15c68a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(23, 218, 153, 0.4);
+}
+
+.purchaseCart:active {
+  transform: translateY(1px);
+}
+
+/* Style pour le panier vide */
+.reservationDetails p:only-child {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+  font-style: italic;
+  background-color: #f9f9f9;
+  border: 2px dashed #ddd;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .resume {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .panier {
+    margin-top: 80px;
+    font-size: 24px;
+  }
+  
+  .purchaseCart {
+    width: 100%;
+  }
+}

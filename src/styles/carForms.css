@@ -1,0 +1,472 @@
+/* carCatalogue.css */
+
+/* Styles généraux */
+.car-catalogue-container {
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  
+  /* En-tête */
+  .catalogue-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #17da99;
+    padding-bottom: 1rem;
+  }
+  
+  .catalogue-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #17da99;
+    margin: 0;
+  }
+  
+  /* Conteneur principal */
+  .catalogue-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  /* Section formulaire */
+  .form-section {
+    background-color: #f8fafc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .form-header {
+    background-color: #17da99;
+    color: white;
+    padding: 1rem 1.5rem;
+  }
+  
+  .form-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  /* Style du formulaire */
+  .car-form {
+    padding: 1.5rem;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  
+  .full-width {
+    grid-column: 1 / -1;
+  }
+  
+  /* Messages */
+  .message-box {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+  
+  .message-box.success {
+    background-color: #dcfce7;
+    color: #166534;
+    border-left: 4px solid #16a34a;
+  }
+  
+  .message-box.error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-left: 4px solid #dc2626;
+  }
+  
+  /* Boutons d'action */
+  .form-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .form-actions button {
+    background-color: #17da99;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .form-actions button:hover {
+    background-color: #11c98b;
+  }
+  
+  .form-actions button:disabled,
+  .form-actions button.btn-loading {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+  }
+  
+  /* Section des voitures */
+  .cars-section {
+    background-color: #f8fafc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .section-header {
+    background-color: #17da99;
+    color: white;
+    padding: 1rem 1.5rem;
+  }
+  
+  .section-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  /* Tableau des voitures */
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .cars-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cars-table th,
+  .cars-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .cars-table th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #475569;
+    white-space: nowrap;
+  }
+  
+  .cars-table tr:hover {
+    background-color: #f8fafc;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  /* Boutons d'action dans le tableau */
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .btn-details {
+    color: #17da99;
+    background: none;
+    border: 1px solid #17da99;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-details:hover {
+    background-color: #eff6ff;
+  }
+  
+  .btn-delete {
+    color: #dc2626;
+    background: none;
+    border: 1px solid #dc2626;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-delete:hover {
+    background-color: #fef2f2;
+  }
+  
+  /* Message catalogue vide */
+  .empty-catalogue {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+    background-color: #f8fafc;
+  }
+  
+  /* Animation de chargement */
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+  }
+  
+  .loading-spinner {
+    border: 4px solid rgba(59, 130, 246, 0.2);
+    border-top: 4px solid #17da99;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Message d'erreur */
+  .error-message {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    max-width: 500px;
+    margin: 3rem auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Media queries pour responsivité */
+  @media (max-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .catalogue-header h1 {
+      font-size: 1.5rem;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .cars-table th,
+    .cars-table td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  /* Styles pour la zone de téléchargement d'image */
+.image-drop-area {
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-drop-area:hover {
+  border-color: #3b82f6;
+  background-color: #f0f9ff;
+}
+
+.image-drop-area.dragging {
+  background-color: #e0f2fe;
+  border-color: #2563eb;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #64748b;
+}
+
+.upload-placeholder svg {
+  color: #3b82f6;
+}
+
+.upload-placeholder p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 80%;
+}
+
+.file-info {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.preview-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.remove-image {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.remove-image:hover {
+  background-color: #dc2626;
+  transform: scale(1.1);
+}
+
+.image-drop-area.has-image {
+  border-style: solid;
+  padding: 10px;
+}
+
+/* Style pour les images de voitures dans le tableau */
+.car-image-cell {
+  width: 80px;
+  padding: 5px !important;
+}
+
+.car-image-cell img {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Animation supplémentaire pour l'upload */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.image-drop-area.dragging {
+  animation: pulse 1.5s infinite;
+}
+
+/* Styles pour le bouton Modifier */
+.btn-edit {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-edit:hover {
+  background-color: #3a7bc8;
+}
+
+/* Styles pour le bouton Annuler */
+.btn-cancel {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn-cancel:hover {
+  background-color: #e0e0e0;
+}
+
+/* Modification du formulaire en mode édition */
+.form-section .form-header h2 {
+  margin-bottom: 15px;
+}
+
+/* Ajustement de l'espacement des boutons d'action */
+.action-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+/* Style pour le texte optionnel de l'image en mode édition */
+.form-group.full-width label {
+  display: block;
+  margin-bottom: 8px;
+}

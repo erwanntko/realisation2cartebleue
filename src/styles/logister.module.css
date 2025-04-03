@@ -1,0 +1,168 @@
+/* Styles généraux de la page */
+.midSlice {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  max-width: 1200px;
+}
+
+/* Container pour les deux formulaires sur les grands écrans */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  
+  .midSlice {
+    width: 50%;
+    max-width: 500px;
+    margin: 0;
+  }
+}
+
+.box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.box h1 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 2px solid #17da99;
+  padding-bottom: 0.5rem;
+}
+
+/* Section de login */
+.loginSection {
+  width: 100%;
+}
+
+/* Style des formulaires */
+.inputBox {
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.inputBox label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.inputBox input[type="text"],
+.inputBox input[type="password"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.inputBox input[type="text"]:focus,
+.inputBox input[type="password"]:focus {
+  border-color: #17da99;
+  box-shadow: 0 0 0 3px rgba(23, 218, 153, 0.2);
+  outline: none;
+}
+
+/* Checkboxes pour Se souvenir de moi */
+.souvenir {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.divInputBoxSouvenir {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inputBoxSouvenir {
+  width: 18px;
+  height: 18px;
+  accent-color: #17da99;
+}
+
+/* Boutons */
+.btn {
+  background-color: #17da99;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  transition: background-color 0.3s;
+  margin-top: 0.5rem;
+}
+
+.btn:hover {
+  background-color: #15c589;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Messages d'erreur */
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+/* Adaptation mobile */
+@media (max-width: 991px) {
+  .midSlice {
+    padding: 1.5rem 1rem;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .box {
+    padding: 1.5rem;
+  }
+  
+  .box h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation des erreurs quand elles sont visibles */
+.error[style*="block"] {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
